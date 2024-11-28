@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Saudação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Saudação de acordo com o horário</h2>
+        <button onclick="mostrarSaudacao()">Mostrar Saudação</button>
+        <p id="resultado"></p>
+        <p id="data"></p>
+        <button onclick="location.href='index.html'">Voltar</button>
+    </div>
+
+    <script>
+        function mostrarSaudacao() {
+            const hora = new Date().getHours()
+            const minuto = new Date().getMinutes()
+            const segundos = new Date().getSeconds()
+            const dia = new Date().getDate()
+            const mes = new Date().getMonth() + 1
+            const ano = new Date().getFullYear()
+
+            const 
+
+            let saudacao
+            
+            if (hora >= 5 && hora < 12) {
+                saudacao = "Bom dia!"
+                document.getElementById('resultado').style.color = 'yellow'
+            } else if (hora >= 12 && hora < 18) {
+                saudacao = "Boa tarde!"
+                document.getElementById('resultado').style.color = 'orange'
+                
+            } else {
+                saudacao = "Boa noite!"
+                document.getElementById('resultado').style.color = '#00F'
+            }
+            
+            document.getElementById('resultado').textContent = saudacao + ' ' + `Agora são ${hora}:${minuto}:${segundos} no seu fuso horário local.`
+            document.getElementById('data').textContent = `Hoje é dia ${dia}/${mes}/${ano}`
+        }
+    </script>
+</body>
+</html>
